@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Lovers' Community</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <i class="fas fa-paw"></i> Pet Lovers' Community
+    </header>
+
+    <!-- Add New Pet Form -->
+    <section>
+        <h2><i class="fas fa-plus-circle icon"></i>Add New Pet Profile</h2>
+        <form id="addPetForm">
+            <input type="text" id="name" placeholder="Pet Name" required>
+            <input type="text" id="species" placeholder="Species (e.g., Dog, Cat, Bird)" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <textarea id="description" rows="3" placeholder="Description"></textarea>
+            <button type="submit">Add Pet</button>
+        </form>
+    </section>
+
+    <!-- Pet List -->
+    <section>
+        <h2><i class="fas fa-list icon"></i>All Pets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Species</th>
+                    <th>Age</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="petsTableBody">
+                <!-- Pet List -->
+            </tbody>
+        </table>
+        <ul id="petsList"></ul> 
+    </section>
+
+
+    <!-- Footer -->
+    <footer style="text-align: center; background-color: #f8f9fa; padding: 10px; margin-top: auto; color: #333; font-size: 14px;">
+        &copy; 2024 Pet Lovers' Community | Built by Caroline Cherutich
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
